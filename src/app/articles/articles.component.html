@@ -1,1 +1,26 @@
-<p>articles works!</p>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100" rel="stylesheet" />
+<div class="container">
+  <p>Filter by keywords!</p>
+  <form>
+    <mat-form-field class="search" appearance="fill">
+      <span class="material-symbols-outlined">search</span>
+      <input matInput>
+    </mat-form-field>
+  </form>
+  <div class="articles">
+    <div *ngFor="let article of articles" class="article">
+      <mat-card>
+        <img mat-card-image [src]="article.imageUrl" alt="">
+
+        <mat-card-title>{{ article.title }}</mat-card-title>
+        <mat-card-content>{{ article.summary }}</mat-card-content>
+        <mat-card-actions>
+          Read more
+          <span class="material-symbols-outlined">
+            arrow_forward
+          </span>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

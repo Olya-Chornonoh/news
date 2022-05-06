@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ArticlesComponent } from './articles/articles.component';
+import { MatSliderModule } from '@angular/material/slider';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from './material.module';
+
 
 @NgModule({
   declarations: [
@@ -14,9 +18,13 @@ import { ArticlesComponent } from './articles/articles.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     NoopAnimationsModule,
-    HttpClientModule
+    MatSliderModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

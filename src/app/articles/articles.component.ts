@@ -8,7 +8,7 @@ import { ArticlesService } from '../services/articles.service';
 })
 export class ArticlesComponent implements OnInit {
 
-  private articles: any[] = [];
+  articles: any[] = [];
   
   constructor(private articlesService: ArticlesService) { }
 
