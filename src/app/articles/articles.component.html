@@ -1,25 +1,28 @@
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100" rel="stylesheet" />
 <div class="container">
   <p>Filter by keywords!</p>
+
   <form>
     <mat-form-field class="search" appearance="fill">
       <span class="material-symbols-outlined">search</span>
-      <input matInput>
+      <input matInput name="search" [ngModel]="searchQuery" (ngModelChange)="onSearch($event)">
     </mat-form-field>
   </form>
+  
   <div class="articles">
-    <div *ngFor="let article of articles" class="article">
-      <mat-card>
-        <img mat-card-image [src]="article.imageUrl" alt="">
+    <div *ngFor="let article of filteredArticles" class="article">
+      <mat-card (click)="forwardToArticle(article.id)" class="item">
+        <img mat-card-image [src]="article.imageUrl">
 
-        <mat-card-title>{{ article.title }}</mat-card-title>
-        <mat-card-content>{{ article.summary }}</mat-card-content>
-        <mat-card-actions>
-          Read more
-          <span class="material-symbols-outlined">
-            arrow_forward
-          </span>
-        </mat-card-actions>
+        <div class="article-info">
+          <mat-card-title class="article-title">{{ article.title | cut }}</mat-card-title>
+          <mat-card-content class="article-summary">{{ article.summary | cut }}</mat-card-content>
+          <mat-card-actions class="article-btn">
+            Read more
+            <span class="material-symbols-outlined">
+              arrow_forward
+            </span>
+          </mat-card-actions>
+        </div>
       </mat-card>
     </div>
   </div>

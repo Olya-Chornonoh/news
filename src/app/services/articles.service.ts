@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Article } from '../types/article';
 
 @Injectable({
   providedIn: 'root'
@@ -11,10 +12,10 @@ export class ArticlesService {
   constructor (private http: HttpClient) { }
 
   getArticles() {
-    return this.http.get<any[]>(`${this.baseUrl}/articles`);
+    return this.http.get<Article[]>(`${this.baseUrl}/articles`);
   }
 
   getArticle(id: string) {
-    return this.http.get<any>(`${this.baseUrl}/articles/${id}`);
+    return this.http.get<Article>(`${this.baseUrl}/articles/${id}`);
   }
 }

@@ -9,12 +9,16 @@ import { ArticlesComponent } from './articles/articles.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
+import { CutPipe } from './pipes/cut.pipe';
+import { ArticleComponent } from './article/article.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ArticlesComponent
+    ArticlesComponent,
+    CutPipe,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,
