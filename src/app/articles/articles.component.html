@@ -1,29 +1,29 @@
 <div class="container">
-  <p>Filter by keywords!</p>
+  <p class="filter">Filter by keywords!</p>
 
-  <form>
-    <mat-form-field class="search" appearance="fill">
-      <span class="material-symbols-outlined">search</span>
-      <input matInput name="search" [ngModel]="searchQuery" (ngModelChange)="onSearch($event)">
-    </mat-form-field>
-  </form>
+  <input class="search" type="search" [ngModel]="searchQuery" (ngModelChange)="onSearch($event)">
   
+  <p *ngIf="searchQuery" class="results">Results: {{ filteredArticles.length }}</p>
   <div class="articles">
-    <div *ngFor="let article of filteredArticles" class="article">
-      <mat-card (click)="forwardToArticle(article.id)" class="item">
-        <img mat-card-image [src]="article.imageUrl">
+    <mat-card  *ngFor="let article of filteredArticles" (click)="forwardToArticle(article.id)" class="article">
+      <img mat-card-image [src]="article.imageUrl" height="217px" class="article-img">
 
-        <div class="article-info">
-          <mat-card-title class="article-title">{{ article.title | cut }}</mat-card-title>
-          <mat-card-content class="article-summary">{{ article.summary | cut }}</mat-card-content>
-          <mat-card-actions class="article-btn">
-            Read more
-            <span class="material-symbols-outlined">
-              arrow_forward
-            </span>
-          </mat-card-actions>
-        </div>
-      </mat-card>
-    </div>
+      <div class="article-info">
+        <mat-card-title class="article-title">
+          <app-text-highlight-keywords [text]="article.title | cut" [keywords]="keywords">
+          </app-text-highlight-keywords>
+        </mat-card-title>
+        <mat-card-content class="article-summary">
+          <app-text-highlight-keywords [text]="article.summary | cut" [keywords]="keywords">
+          </app-text-highlight-keywords>
+        </mat-card-content>
+        <mat-card-actions class="article-btn">
+          Read more
+          <span class="material-symbols-outlined">
+            arrow_forward
+          </span>
+        </mat-card-actions>
+      </div>
+    </mat-card>
   </div>
 </div>

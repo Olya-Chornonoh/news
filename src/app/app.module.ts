@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
 import { CutPipe } from './pipes/cut.pipe';
 import { ArticleComponent } from './article/article.component';
+import { TextHighlightKeywordsComponent } from './text-highlight-keywords/text-highlight-keywords.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ArticleComponent } from './article/article.component';
     AppComponent,
     ArticlesComponent,
     CutPipe,
-    ArticleComponent
+    ArticleComponent,
+    TextHighlightKeywordsComponent
   ],
   imports: [
     BrowserModule,

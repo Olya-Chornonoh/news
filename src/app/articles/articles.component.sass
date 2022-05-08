@@ -1,28 +1,54 @@
 .articles
   display: grid
   grid-template-columns: repeat(3, 1fr)
+  grid-auto-rows: 530px
   gap: 45px
   border-top: 1px solid #EAEAEA
   padding-top: 45px
 
+.results
+  font-family: 'Montserrat'
+  font-style: normal
+  font-weight: 600
+  font-size: 16px
+  line-height: 20px
+  color: #363636
+
+.filter
+  font-family: 'Montserrat'
+  font-weight: 600
+  font-size: 16px
+  line-height: 20px
+  color: #363636
+
 .article
+  height: 100%
   box-sizing: border-box
   border: 1px solid #EAEAEA
   box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05)
   border-radius: 5px
+  align-self: baseline
+
+  &-img
+    object-fit: cover
+    display: block
 
   &-info
+    height: calc(100% - 217px)
+    display: flex
+    flex-direction: column
+    justify-content: space-between
     padding: 0 25px 25px
   
   &-title
-    font: Montserrat
+    font-family: 'Montserrat'
     font-weight: 400
     font-size: 24px
     line-height: 29px
     color: #363636
   
   &-summary
-    font: Montserrat
+    font-family: 'Montserrat'
     font-weight: 400
     font-size: 16px
     line-height: 24px
@@ -31,7 +57,7 @@
   &-btn
     display: flex
     align-items: center
-    font: Montserrat
+    font-family: 'Montserrat'
     font-weight: 700
     font-size: 16px
     line-height: 24px
@@ -40,9 +66,24 @@
 .container
   padding: 50px 75px 63px
 
-.mat-form-field
-  display: flex
-  flex-direction: row
-  gap: 20px
-  background: #fff
+.search
+  padding: 13px 20px 13px 60px
+  font-family: 'Montserrat'
+  font-style: normal
+  font-weight: 400
+  font-size: 16px
+  line-height: 150%
+  color: #575757
+  background: #FFFFFF
+  border: 1px solid #EAEAEA
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05)
+  border-radius: 5px
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.7832 14.3911L20 18.6069L18.6069 20L14.3911 15.7832C12.8224 17.0407 10.8713 17.7246 8.86088 17.7218C3.96968 17.7218 0 13.7521 0 8.86088C0 3.96968 3.96968 0 8.86088 0C13.7521 0 17.7218 3.96968 17.7218 8.86088C17.7246 10.8713 17.0407 12.8224 15.7832 14.3911ZM13.8082 13.6605C15.0577 12.3756 15.7555 10.6532 15.7527 8.86088C15.7527 5.05267 12.6681 1.96909 8.86088 1.96909C5.05267 1.96909 1.96909 5.05267 1.96909 8.86088C1.96909 12.6681 5.05267 15.7527 8.86088 15.7527C10.6532 15.7555 12.3756 15.0577 13.6605 13.8082L13.8082 13.6605Z' fill='%23575757'/%3E%3C/svg%3E%0A")
+  background-repeat: no-repeat
+  background-position: 20px center
+  margin-bottom: 55px
   
+  &:focus, &:focus-visible
+    border: 1px solid #EAEAEA
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05)
+    outline: none

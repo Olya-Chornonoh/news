@@ -1,0 +1,6 @@
+<p>
+  <ng-container *ngFor="let word of words; let i = index;">
+    <span [ngClass]="keywords.includes(word.toLowerCase()) ? 'highlight' : ''">{{ word }}</span>
+    <span *ngIf="i !== words.length - 1">{{ ' ' }}</span>
+  </ng-container>
+</p>
